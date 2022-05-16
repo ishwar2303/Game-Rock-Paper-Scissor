@@ -1,0 +1,204 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.game-zone {
+    background: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game-zone > div {
+    display: flex;
+}
+.player-block {
+    display: flex;
+}
+.player-block > .player {
+    flex: 1;
+    border: 1px solid rgb(241, 209, 27);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+}
+.player {
+    display: flex;
+    flex-direction: column;
+}
+.versus {
+    margin: 0px 30px;
+    color: red;
+    display: flex;
+    align-items: center;
+}
+.versus img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.move img {
+    width: 100px;
+}
+.turns {
+    display: flex;
+}
+.turns button {
+    flex: 1;
+    margin: 0px 10px;
+    padding: 10px 15px;
+    background:rgb(27, 155, 241);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.turns button:first-child {
+    margin-left: 0;
+}
+.turns button:last-child {
+    margin-right: 0;
+}
+#player-turn-button {
+    display: none;
+}
+.move {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.move i {
+    color: white;
+}
+.player h2 {
+    font-size: 28px;
+    font-weight: 4;
+    color:rgb(27, 155, 241);
+    text-align: center;
+}
+#score {
+    font-size: 50px;
+    color: white;
+    margin: 20px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+#play {
+    border-radius: 5px;
+    border: none;
+    background: rgb(22, 136, 31);
+    color: white;
+    padding: 10px 25px;
+    font-size: 25px;
+}
+#reset {
+    border-radius: 5px;
+    border: none;
+    background: gray;
+    color: white;
+    padding: 10px 25px;
+    font-size: 25px;
+}
+#game-started {
+    color: rgb(22, 136, 31);
+    font-style: italic;
+    font-size: 20px;
+    padding: 10px 25px;
+    display: none;
+}
+.play-container {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.main-log-container {
+    width: 400px;
+    margin-left: 50px;
+}
+.main-log-container h1 {
+    margin-top: 20px;
+    text-align: center;
+    color: antiquewhite;
+    margin-bottom: 10px;
+}
+.log-container {
+    display: flex;
+    color:rgb(241, 209, 27);
+    font-size: 14px;
+
+}
+
+.log-container > div {
+    padding: 5px;
+    border-bottom: 0.5px solid rgb(241, 209, 27);
+    flex: 1;
+}
+.log-container > .log-serial {
+    flex: 0.5;
+}
+.log-container > div:last-child {
+    text-align: right;
+}
+#log {
+    display: flex;
+    flex-direction: column;
+    color: rgb(228, 228, 228);
+    max-height: 400px;
+    overflow-y: auto;
+}
+#log > div {
+    display: flex;
+}
+#log > div > div {
+    flex: 1;
+    padding: 5px;
+    border-bottom: 0.5px solid;
+    font-size: 14px;
+}
+#log > div > div:first-child {
+    flex: 0.5;
+}
+
+#log > div > div:last-child {
+    text-align: right;
+}
+#winner {
+    font-size: 30px;
+    margin-top: 20px;
+    font-style: italic;
+    font-family: monospace;
+    text-align: center;
+    margin-left: 50px;
+}
+.custom-input {
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    margin-left: 10px;
+}
+.custom-input label {
+    font-size: 14px;
+}
+.flex {
+    display: flex;
+}
+#max-turns-input {
+    margin-top: 5px;
+    border: 0.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    width: 80px;
+    color: rgb(241, 209, 27);
+    background: black;
+}
+#max-turns-input:focus {
+    outline: none;
+    border-color: rgb(241, 209, 27);
+    box-shadow: 0px 0px 0px 5px rgb(241, 209, 27, 0.3);
+}
