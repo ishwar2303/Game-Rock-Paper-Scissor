@@ -100,7 +100,7 @@ body {
     text-align: center;
 }
 .player #youStar,
-.player #comStar {
+.player #compStar {
     position: absolute;
     font-size: 30px;
     color: gold;
