@@ -10,6 +10,9 @@
     <script src="https://kit.fontawesome.com/196c90f518.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="game-header">
+        <h1>Rock Paper Scissor</h1>
+    </div>
     <div class="game-zone">
         <div>
             <div>
@@ -21,27 +24,34 @@
                     </h1>
                     <div class="player-block">
                         <div class="player">
+                            <i class="fas fa-star" id="youStar"></i>
                             <h2>You</h2>
                             <div class="move" id="playerMove">
                             </div>
-                            <div class="turns" id="player-turn-button">
-                                <button id="user-rock">Rock</button>
-                                <button id="user-paper">Paper</button>
-                                <button id="user-scissor">Scissor</button>
+                            <div class="flex">
+                                <div style="height: 35.5px;"></div>
+                                <div class="turns" id="player-turn-button">
+                                    <button id="user-rock">Rock</button>
+                                    <button id="user-paper">Paper</button>
+                                    <button id="user-scissor">Scissor</button>
+                                </div>
                             </div>
                         </div>
                         <div class="versus">
                             <img src="assets/lightning.jpeg" alt="">
                         </div>
                         <div class="player">
+                            <i class="fas fa-star" id="compStar"></i>
                             <h2>Computer</h2>
                             <div class="move" id="computerMove"></div>
-                            <div class="turns">
-                                <div style="height: 35.5px;"></div>
-                                <div style="display: none;">
-                                    <button id="com-rock">Rock</button>
-                                    <button id="com-paper">Paper</button>
-                                    <button id="com-scissor">Scissor</button>
+                            <div class="flex">
+                                <div class="turns">
+                                    <div style="height: 35.5px;"></div>
+                                    <div style="display: none;">
+                                        <button id="com-rock">Rock</button>
+                                        <button id="com-paper">Paper</button>
+                                        <button id="com-scissor">Scissor</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

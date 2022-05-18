@@ -16,9 +16,9 @@ class Game {
         this.logBlock.innerHTML = '';
         this.winnerBlock = document.getElementById('winner');
         this.winnerBlock.innerHTML = '';
-        this.rock = '<img src="assets/rock.png" alt="">';
-        this.scissor = '<img src="assets/scissor.png" alt="">';
-        this.paper = '<img src="assets/paper.png" alt="">';
+        this.rock = '<img src="assets/rock-1.png" alt="">';
+        this.scissor = '<img src="assets/scissor-1.png" alt="">';
+        this.paper = '<img src="assets/paper-1.png" alt="">';
         this.playerMoveBlock = document.getElementById('playerMove');
         this.computerMoveBlock = document.getElementById('computerMove');
         this.playerMoveBlock.innerHTML = '';
@@ -32,7 +32,10 @@ class Game {
         this.inputBlock = document.getElementById('max-turns-input');
         this.inputBlock.disabled = true;
         this.inputBlock.value = this.maxTurns;
-        
+        this.compStar = document.getElementById('compStar');
+        this.youStar = document.getElementById('youStar');
+        this.compStar.style.display = 'none';
+        this.youStar.style.display = 'none';
     }
 
     getImage(move) {
@@ -69,6 +72,7 @@ class Game {
     }
 
     setPlayerMove(move) {
+        this.playerButtons.style.display = 'none';
         this.control = false;
         this.playerMove = move;
         this.setComputerMove();
@@ -78,8 +82,9 @@ class Game {
         let i = parseInt((Math.random()*10)%3);
         this.compMove = this.convert(i);
         this.computerMoveBlock.innerHTML = '<i class="fas fa-sync fa-spin" style="font-size: 35px; color: white;"></i>';
-        this.renderPlayerMove();
+        this.playerMoveBlock.innerHTML = '<i class="fas fa-sync fa-spin" style="font-size: 35px; color: white;"></i>';
         setTimeout(() => {
+            this.renderPlayerMove();
             this.renderComputerMove();
             this.fight();
         }, 1000);
@@ -103,7 +108,17 @@ class Game {
         div.appendChild(c);
         div.appendChild(s);
         this.logBlock.appendChild(div);
-        this.control = true;
+
+        if(this.turnWinner == 'Player') {
+            this.youStar.style.display = 'block';
+        }
+        else {
+            this.compStar.style.display = 'block';
+        }
+        setTimeout(() => {
+            this.youStar.style.display = 'none';
+            this.compStar.style.display = 'none';
+        }, 1000);
     }
 
     fight() {
@@ -168,15 +183,17 @@ class Game {
                 // loosing player can't win from this step
                 if(this.comScore > this.youScore) {
                     color = 'red';
-                    this.gameWinner = 'Winner Computer';
+                    this.gameWinner = 'Computer Wins';
                 }
                 else {
                     color = 'green';
-                    this.gameWinner = 'Winner Player';
+                    this.gameWinner = 'Player Wins';
                 }
             }
         }
 
+        this.control = true;
+        this.playerButtons.style.display = 'flex';
         if(this.gameWinner) {
             this.control = false;
             this.inputBlock.disabled = false;
