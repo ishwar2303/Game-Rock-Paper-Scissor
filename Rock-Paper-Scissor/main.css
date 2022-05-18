@@ -99,7 +99,8 @@ body {
     color:rgb(27, 155, 241);
     text-align: center;
 }
-.player i {
+.player #youStar,
+.player #comStar {
     position: absolute;
     font-size: 30px;
     color: gold;
